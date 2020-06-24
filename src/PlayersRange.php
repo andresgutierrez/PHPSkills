@@ -2,7 +2,7 @@
 
 use Moserware\Skills\Numerics\Range;
 
-class PlayersRange extends Range
+class PlayersRange extends Range implements Countable
 {
     public function __construct($min, $max)
     {
@@ -12,5 +12,10 @@ class PlayersRange extends Range
     protected static function create($min, $max)
     {
         return new PlayersRange($min, $max);
+    }
+
+    public function count()
+    {
+        return 1;
     }
 }
